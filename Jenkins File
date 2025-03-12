@@ -2,19 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Hello') {
             steps {
-                echo 'building'
-            }
-        }
-         stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }
-         stage('Deploy') {
-            steps {
-                echo 'Deploying'
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: '', reportFiles: 'index2.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
     }
